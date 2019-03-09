@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="#efefef"
+    android:layout_height="fill_parent" >
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".setwin">
+
+
+    <TextView
+        android:id="@+id/winstat"
+        android:textAlignment="center"
+        android:layout_width="491dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="498dp"
+        android:layout_height="94dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="55dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datamax">
+
+        <Button
+            android:layout_width="238dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="#5cb85c"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:onClick="saveMatch"
+            android:text="Submit"
+            android:textSize="14sp" />
+
+        <Button
+            android:layout_width="238dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="#EE7600"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:onClick="discardMatch"
+            android:text="Discard"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/datamax"
+        android:textAlignment="center"
+        android:layout_width="491dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="128dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+</ScrollView>

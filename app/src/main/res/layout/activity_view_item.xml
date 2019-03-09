@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewItemActivity"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <TextView
+        android:id="@+id/item_winner"
+        android:background="@drawable/border3"
+        android:text="Winner"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="22"/>
+
+    <TextView
+        android:background="@drawable/border2"
+        android:id="@+id/item_loser"
+        android:text="Loser"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="22"/>
+
+    <TextView
+        android:background="@drawable/my_border"
+        android:id="@+id/item_points"
+        android:text="Points"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="22"/>
+
+    <TextView
+        android:background="@drawable/border2"
+        android:id="@+id/item_set"
+        android:text="Number of Sets"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="22"/>
+
+
+
+    <ListView
+        android:id="@+id/item_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="12">
+    </ListView>
+
+</LinearLayout>

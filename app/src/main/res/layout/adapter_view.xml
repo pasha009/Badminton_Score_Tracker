@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="33.3">
+
+        <TextView
+            android:background="@drawable/border3"
+            android:gravity="center"
+            android:text="Winner"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/Winner"/>
+
+        <TextView
+            android:background="@drawable/border2"
+            android:gravity="center"
+            android:text="Loser"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/Loser"
+            android:layout_below="@+id/Winner"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/setThing"
+        android:background="@drawable/my_border"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="66.6"
+        android:gravity="center"
+        android:text="SetA : SetB"
+        android:textAlignment="center" />
+
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="#efefef"
+    android:layout_height="fill_parent" >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Start_activity">
+
+
+    <EditText
+        android:id="@+id/name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:ems="13"
+        android:layout_marginTop="30dp"
+        android:hint="Player 1"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/name2"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:ems="13"
+        android:hint="Player 2"
+        android:inputType="textPersonName"
+        />
+
+    <EditText
+        android:id="@+id/sets"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:ems="13"
+        android:layout_margin="10dp"
+        android:hint="Number of sets"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="13"
+        android:layout_margin="10dp"
+        android:hint="Points each set"
+        android:inputType="number" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:id="@+id/button5"
+        android:background="#5cb85c"
+        android:text="Submit"
+        android:ems="13"
+        android:layout_gravity="center"
+        android:onClick="sendMessage"
+        android:textColor="#ffffff"
+        />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#d9435f"
+        android:text="back"
+        android:ems="13"
+        android:textColor="#ffffff" />
+
+</LinearLayout>
+</ScrollView>

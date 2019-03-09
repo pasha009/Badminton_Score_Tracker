@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:weightSum="100">
+
+    <TextView
+        android:background="@drawable/my_border"
+        android:text="setIndex"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:id="@+id/set_index"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="39.33"/>
+
+    <TextView
+        android:background="@drawable/my_border"
+        android:text="Winner Points"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textSize="15dp"
+        android:id="@+id/winner_points"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="30.33"/>
+
+    <TextView
+        android:background="@drawable/my_border"
+        android:text="Loser Points"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textSize="15dp"
+        android:id="@+id/loser_points"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="30.33"/>
+
+</LinearLayout>
