@@ -24,14 +24,14 @@ public class ViewActivity extends AppCompatActivity {
 
         SharedPreferences prefs = mContext.getSharedPreferences("preferencename", 0);
 
-        int size = prefs.getInt(ArrayName + "_size", 0);
+        final int size = prefs.getInt(ArrayName + "_size", 0);
 
         final ArrayList<Match> matchlist = new ArrayList<>();
 
         for(int i=size-1;i>=0;i--)
             matchlist.add(decode(prefs.getString(ArrayName + "_" + i, null)));
 
-        ListView mListView = (ListView) findViewById(R.id.listView);
+        ListView mListView = findViewById(R.id.listView);
         MatchListAdapter adapter = new MatchListAdapter(this, R.layout.adapter_view, matchlist);
         mListView.setAdapter(adapter);
 
@@ -40,7 +40,7 @@ public class ViewActivity extends AppCompatActivity {
             // https://www.viralandroid.com/2016/04/start-new-activity-from-android-listview-onitem-clicked.html
             public void onItemClick(AdapterView<?> adapterview, View view, int i, long l) {
                 Intent intent = new Intent(view.getContext(), ViewItemActivity.class);
-                intent.putExtra("position", i);
+                intent.putExtra("position", size - i - 1);
                 startActivity(intent);
             }
         });
@@ -57,9 +57,7 @@ public class ViewActivity extends AppCompatActivity {
         loser = parts[1];
         setString = parts[4] +  " : " + parts[5];
 
-        Match match = new Match(winner, loser, setString);
-
-        return match;
+        return new Match(winner, loser, setString);
     }
 
 }

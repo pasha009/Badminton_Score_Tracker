@@ -7,8 +7,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#efefef"
+    android:layout_height="wrap_content"
+    android:background="#e1e8f0"
     tools:context=".MainActivity" android:orientation="vertical">
 
     <TextView
@@ -19,8 +19,8 @@
         android:layout_gravity="center"
         android:padding="10dp"
         android:textColor="#070707"
-        android:layout_marginTop="60dp"
-        android:fontFamily="cursive"/>
+        android:layout_marginTop="60dp"/>
+        <!--android:fontFamily="roboto"/>-->
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -32,12 +32,12 @@
 
         <Button
             android:id="@+id/newmatch"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:padding="20dp"
-            android:background="#202626"
+            android:background="#6ed3cf"
             android:text="Record New Match"
             android:textColor="#ffffff"
             android:textSize="18dp" />
@@ -47,11 +47,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:padding="20dp"
-            android:background="#6897dd"
+            android:background="#9068be"
             android:text="View Results"
             android:textColor="#fff"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/syncserver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:padding="20dp"
+            android:background="#e62739"
+            android:text="Sync To Server"
+            android:textColor="#ffffff"
             android:textSize="18dp" />
 
     </LinearLayout>
