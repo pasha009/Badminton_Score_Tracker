@@ -39,13 +39,21 @@ public class Start_activity extends AppCompatActivity {
             toast.show();
         }
         else{
-            startIntent();
+            if(Integer.valueOf(sets) % 2 == 0){
+                int duration = Toast.LENGTH_LONG;
+                Toast toast = Toast.makeText(this, "Number of sets must be odd", duration);
+                toast.show();
+            }
+            else{
+                startIntent();
+            }
+
         }
 
     }
 
     private void startIntent() {
-        Intent intent = new Intent(getApplicationContext(), welcome.class );
+        Intent intent = new Intent(getApplicationContext(), Welcome.class );
         intent.putExtra("Name1", name1);
         intent.putExtra("Name2", name2);
         intent.putExtra("points", points);

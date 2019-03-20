@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,7 @@ import java.util.Map;
 
 public class setwin extends AppCompatActivity
 {
+        private static final String TAG = "setwin";
         public static String winner,loser,data, mainstring,winstatem,statement;
         public static int set1,set2,set,points;
         @Override
@@ -40,16 +42,16 @@ public class setwin extends AppCompatActivity
             Intent intent = getIntent();
             winner = intent.getStringExtra("winner");
             loser = intent.getStringExtra("loser");
-            set = Integer.valueOf(intent.getStringExtra("sets"));
-            set1 = Integer.valueOf(intent.getStringExtra("setw"));
+            set = intent.getIntExtra("sets", 0);
+            set1 = intent.getIntExtra("setw", 0);
 //            StringBuilder okay = new StringBuilder();
-            set2 = Integer.valueOf(intent.getStringExtra("setl"));
+            set2 = intent.getIntExtra("setl", 0);
             data = intent.getStringExtra("data");
-            points=Integer.valueOf(intent.getStringExtra("points"));
+            points=intent.getIntExtra("points", 0);
 
             winstatem=winner+" beats "+loser+" - "+String.valueOf(set1)+" : "+String.valueOf(set2);
             mainstring = winner + "," + loser + "," + String.valueOf(set) + ","+ String.valueOf(points) + "," + String.valueOf(set1) + ","+String.valueOf(set2) + data;
-
+            Log.d(TAG, "onCreate: mainstring " + mainstring);
             String[] parts = mainstring.split(",");
             statement="";
             for(int i=0;i<set1+set2;i++)

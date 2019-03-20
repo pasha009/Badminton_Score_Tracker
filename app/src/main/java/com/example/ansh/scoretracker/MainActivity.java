@@ -22,7 +22,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Button newmatch =  findViewById(R.id.newmatch);
         Button viewresults = findViewById(R.id.viewresults);
         Button syncServer = findViewById(R.id.syncserver);
+
 
         newmatch.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
