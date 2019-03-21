@@ -56,7 +56,7 @@ public class ViewItemActivity extends AppCompatActivity {
             points.setText("Number of Points : " + parts[3]);
 
 
-            itemlist.add(new MyItem("Set No.","Points A","Points B"));
+            itemlist.add(new MyItem("Set No.","Winner","Loser"));
             for(int i = 0; i < setsInReal; ++i){
                 itemlist.add(new MyItem(String.valueOf(i + 1), parts[2*i + 6], parts[2*i + 7]));
             }
