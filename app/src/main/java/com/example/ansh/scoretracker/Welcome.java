@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,8 @@ public class Welcome extends AppCompatActivity {
     private int pointScoredA = 0, pointScoredB = 0, setsDecided,
             setsAwon = 0, setsBwon = 0, pointsDecided, limit,
             duce, threshold, setsWinnerWon, setsLoserWon;
+
+    private boolean AEnable = true, BEnable = true;
 
     private String score1 = "", score2 = "", data = "", name1, name2, winner, loser;
     private Context mContext;
@@ -59,17 +62,45 @@ public class Welcome extends AppCompatActivity {
         duce = pointsDecided - 1;
         threshold = (setsDecided + 1)/2;
 
+        setListeners();
+
         mContext = getApplicationContext();
     }
 
+    private void setListeners(){
+        Button adda = findViewById(R.id.add1);
+        Button addb = findViewById(R.id.add2);
+
+        adda.setOnClickListener(new DebouncedOnClickListener(150) {
+            @Override
+            public void onDebouncedClick(View v) {
+                addA(v);
+            }
+        });
+
+        addb.setOnClickListener(new DebouncedOnClickListener(150) {
+            @Override
+            public void onDebouncedClick(View v) {
+                addB(v);
+            }
+        });
+    }
+
     public void addA(View v){
-        pointScoredA++;
-        checkAllConditions();
+        if(AEnable){
+            pointScoredA++;
+            AEnable = false;
+            checkAllConditions();
+        }
+
     }
 
     public void addB(View v){
-        pointScoredB++;
-        checkAllConditions();
+        if(BEnable){
+            pointScoredB++;
+            BEnable = false;
+            checkAllConditions();
+        }
     }
 
     public void subA(View v){
@@ -86,8 +117,8 @@ public class Welcome extends AppCompatActivity {
         getConfirmation("Reset", "Confirm to RESET this match", "reset", "Reset", "Dismiss");
     }
 
-    private void endMatch(){
-        getConfirmation("End Match", "Confirm to END this match", "endmatch", "End Now", "Wait");
+    private void endSet(){
+        getConfirmation("End Set", "Confirm to END this set", "endset", "End Now", "Wait");
     }
 
     private void checkAllConditions(){
@@ -98,46 +129,13 @@ public class Welcome extends AppCompatActivity {
         if(pointScoredA + pointScoredB > limit) endSet();
         else if(pointScoredA >= duce && pointScoredB >= duce && abs(pointScoredA - pointScoredB) >= 2) endSet();
         else if(max(pointScoredA, pointScoredB) == pointsDecided && min(pointScoredA, pointScoredB) < duce) endSet();
-    }
-
-    private void endSet(){
-
-        Log.d(TAG, "endSet: ending set");
-        // getConfirmation
-        // detect winner and add to data
-        score1 = score1 + pointScoredA + ",";
-        score2 = score2 + pointScoredB + ",";
-        if(pointScoredA > pointScoredB){
-            setsAwon++;
-            showToast(name1 + " wins the set by " + pointScoredA + " : " + pointScoredB);
-        }
         else{
-            setsBwon++;
-            showToast(name2 + " wins the set by " + pointScoredB + " : " + pointScoredA);
+            AEnable = true;
+            BEnable = true;
         }
-        pointScoredA = 0;
-        pointScoredB = 0;
-        changeSetDisplay();
-        changePointDisplay();
 
-        // check end of match and pass data to summary of match
-        if(setsAwon >= threshold){
-            winner = name1;
-            loser = name2;
-            setsWinnerWon = setsAwon;
-            setsLoserWon = setsBwon;
-            data = getData(score1, score2);
-            endMatch();
-        }
-        else if(setsBwon >= threshold){
-            winner = name2;
-            loser = name1;
-            setsWinnerWon = setsBwon;
-            setsLoserWon = setsAwon;
-            data = getData(score2, score1);
-            endMatch();
-        }
     }
+
 
     private String getData(String w, String l){
         Log.d(TAG, "getData: w, l " + w + " " + l);
@@ -162,6 +160,44 @@ public class Welcome extends AppCompatActivity {
         displayPointA.setText(String.valueOf(pointScoredA));
         displayPointB.setText(String.valueOf(pointScoredB));
 
+    }
+
+    private void endSetReally(){
+        score1 = score1 + pointScoredA + ",";
+        score2 = score2 + pointScoredB + ",";
+        if(pointScoredA > pointScoredB){
+            setsAwon++;
+            showToast(name1 + " wins the set by " + pointScoredA + " : " + pointScoredB);
+        }
+        else{
+            setsBwon++;
+            showToast(name2 + " wins the set by " + pointScoredB + " : " + pointScoredA);
+        }
+        pointScoredA = 0;
+        pointScoredB = 0;
+        changeSetDisplay();
+        changePointDisplay();
+
+        AEnable = true;
+        BEnable = true;
+
+        // check end of match and pass data to summary of match
+        if(setsAwon >= threshold){
+            winner = name1;
+            loser = name2;
+            setsWinnerWon = setsAwon;
+            setsLoserWon = setsBwon;
+            data = getData(score1, score2);
+            endMatchReally();
+        }
+        else if(setsBwon >= threshold){
+            winner = name2;
+            loser = name1;
+            setsWinnerWon = setsBwon;
+            setsLoserWon = setsAwon;
+            data = getData(score2, score1);
+            endMatchReally();
+        }
     }
 
     private void resetReally(){
@@ -210,8 +246,8 @@ public class Welcome extends AppCompatActivity {
                             case "reset":
                                 resetReally();
                                 break;
-                            case "endmatch":
-                                endMatchReally();
+                            case "endset":
+                                endSetReally();
                                 break;
                         }
 
