@@ -2,7 +2,7 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:background="#efefef"
+    android:background="#e1e8f0"
     android:layout_height="fill_parent" >
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,9 +18,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
         android:ems="13"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="10dp"
         android:hint="Player 1"
         android:inputType="textPersonName" />
 
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:id="@+id/button5"
-        android:background="#5cb85c"
+        android:background="@drawable/border3"
         android:text="Submit"
         android:ems="13"
         android:layout_gravity="center"
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#d9435f"
+        android:background="@drawable/border4"
         android:text="back"
         android:ems="13"
         android:textColor="#ffffff" />

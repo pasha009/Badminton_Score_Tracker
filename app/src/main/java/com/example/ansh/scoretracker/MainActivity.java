@@ -28,8 +28,10 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     private String winner, loser, points, set, set1, set2, failedAttempts;
+    public static boolean canExit = true;
 
     String TAG = "MainActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

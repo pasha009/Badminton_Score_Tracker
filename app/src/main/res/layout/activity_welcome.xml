@@ -2,30 +2,31 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:background="#efefef"
+    android:background="#e1e8f0"
     android:layout_height="fill_parent" >
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#fff4f4f4"
+    android:layout_height="wrap_content"
+    android:background="#e1e8f0"
     android:orientation="vertical"
     tools:context=".Welcome">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#999"
-        android:orientation="horizontal">
+        android:background="#666"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="314dp"
-            android:layout_marginRight="1dp"
+            android:layout_marginEnd="1dp"
             android:layout_weight="1"
-            android:background="#fff4f4f4"
+            android:background="@drawable/border1"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="18dp">
@@ -47,13 +48,14 @@
                 android:layout_width="230dp"
                 android:layout_height="39dp"
                 android:text="0"
+                android:textSize="30sp"
                 android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/team_a_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="sans-serif-light"
                 android:text="0"
                 android:textAllCaps="true"
@@ -66,27 +68,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
                 android:layout_marginTop="10dp"
-                android:background="#79CDCD"
+                android:background="@drawable/border3"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text="+1 Add"
                 android:textAllCaps="true"
                 android:textColor="#fff"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/sub1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:background="#CD5555"
+                android:background="@drawable/border4"
                 android:onClick="subA"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:text="-1 sub"
+                android:text="-1 Sub"
                 android:textAllCaps="true"
                 android:textColor="#fff"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
 
         </LinearLayout>
@@ -94,9 +96,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginRight="1dp"
+            android:layout_marginEnd="1dp"
             android:layout_weight="1"
-            android:background="#fff4f4f4"
+            android:background="@drawable/border1"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="18dp">
@@ -117,13 +119,15 @@
                 android:layout_width="197dp"
                 android:layout_height="37dp"
                 android:text="0"
+                android:textSize="30sp"
+
                 android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/team_b_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="sans-serif-light"
                 android:text="0"
                 android:textAllCaps="true"
@@ -136,47 +140,50 @@
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
                 android:layout_marginTop="10dp"
-                android:background="#79CDCD"
+                android:background="@drawable/border3"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text="+1 Add"
                 android:textAllCaps="true"
                 android:textColor="#fff"
-                android:textSize="14sp" />
+                android:textSize="18sp" />
 
             <Button
-                android:id="@+id/team_b_three_score"
+                android:id="@+id/sub2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:background="#CD5C5C"
+                android:background="@drawable/border4"
                 android:onClick="subB"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:text="-1 Sub"
                 android:textAllCaps="true"
                 android:textColor="#fff"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="731dp"
-        android:layout_height="110dp"
+        android:layout_height="95dp"
         android:layout_gravity="center"
         android:gravity="center"
+        android:background="@drawable/border1"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="238dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
-            android:background="#EE7600"
+            android:background="@drawable/border0"
             android:onClick="reset"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:text="Reset"
-            android:textSize="14sp" />
+            android:textColor="#fff"
+
+            android:textSize="18sp" />
 
     </LinearLayout>
 

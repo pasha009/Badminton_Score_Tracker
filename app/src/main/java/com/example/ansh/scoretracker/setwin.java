@@ -100,7 +100,6 @@ public class setwin extends AppCompatActivity
             int duration = Toast.LENGTH_LONG;
             Toast toast = Toast.makeText(mContext, "No Internet Detected. Sync to server when online ", duration);
             toast.show();
-
         }
 
         /////////////////////////////////////////////////////////////
@@ -166,7 +165,7 @@ public class setwin extends AppCompatActivity
             }
         };
 
-        int socketTimeOut = 50000;// u can change this .. here it is 50 seconds
+        int socketTimeOut = 10000;// u can change this .. here it is 10 seconds
 
         RetryPolicy retryPolicy = new DefaultRetryPolicy(socketTimeOut, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
         stringRequest.setRetryPolicy(retryPolicy);
@@ -174,10 +173,6 @@ public class setwin extends AppCompatActivity
         RequestQueue queue = Volley.newRequestQueue(this);
 
         queue.add(stringRequest);
-
-        int duration = Toast.LENGTH_LONG;
-        Toast toast = Toast.makeText(getApplicationContext(), "Match Saved Successfully !", duration);
-        toast.show();
 
 
     }

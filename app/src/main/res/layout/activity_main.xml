@@ -15,7 +15,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Score Tracker"
-        android:textSize="50sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="40sp"
         android:layout_gravity="center"
         android:padding="10dp"
         android:textColor="#070707"
@@ -37,7 +38,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:padding="20dp"
-            android:background="#6ed3cf"
+            android:background="@drawable/border2"
             android:text="Record New Match"
             android:textColor="#ffffff"
             android:textSize="18dp" />
@@ -49,7 +50,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:padding="20dp"
-            android:background="#9068be"
+            android:background="@drawable/border3"
             android:text="View Results"
             android:textColor="#fff"
             android:textSize="18dp" />
@@ -61,7 +62,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:padding="20dp"
-            android:background="#e62739"
+            android:background="@drawable/border4"
             android:text="Sync To Server"
             android:textColor="#ffffff"
             android:textSize="18dp" />
