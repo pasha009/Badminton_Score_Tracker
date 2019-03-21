@@ -24,10 +24,8 @@
         </activity>
         <activity android:name=".setwin" />
         <activity android:name=".Start_activity" />
-        <activity android:name=".welcome" />
         <activity android:name=".ViewActivity" />
         <activity android:name=".ViewItemActivity" />
-        <activity android:name=".TestSaveActivity" />
     </application>
 
 </manifest>

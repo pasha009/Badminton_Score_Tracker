@@ -35,6 +35,11 @@ public class Welcome extends AppCompatActivity {
     private TextView displayPointA;
     private TextView displayPointB;
 
+    @Override
+    public void onBackPressed() {
+        showToast("Back not Allowed");
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,7 +141,6 @@ public class Welcome extends AppCompatActivity {
 
     }
 
-
     private String getData(String w, String l){
         Log.d(TAG, "getData: w, l " + w + " " + l);
         String[] win = w.split(",");
@@ -149,7 +153,6 @@ public class Welcome extends AppCompatActivity {
 
         return res.toString();
     }
-
 
     private void changeSetDisplay(){
         displaySetA.setText(String.valueOf(setsAwon));
