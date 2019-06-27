@@ -43,22 +43,31 @@ public class Start_activity extends AppCompatActivity {
         sets = set.getText().toString();
         points = point.getText().toString();
 
-        if(name1.indexOf(',') != -1 || name2.indexOf(',') != -1){
+        if(names1.length() == 0 || names2.length() == 0 || set.length() == 0 || point.length() == 0){
             int duration = Toast.LENGTH_LONG;
-            Toast toast = Toast.makeText(this, "No comma in name of players !", duration);
+            Toast toast = Toast.makeText(this, "Please fill all values", duration);
             toast.show();
         }
-        else{
-            if(Integer.valueOf(sets) % 2 == 0){
+        else {
+            if(name1.indexOf(',') != -1 || name2.indexOf(',') != -1){
                 int duration = Toast.LENGTH_LONG;
-                Toast toast = Toast.makeText(this, "Number of sets must be odd", duration);
+                Toast toast = Toast.makeText(this, "No comma in name of players !", duration);
                 toast.show();
             }
             else{
-                startIntent();
-            }
+                if(Integer.valueOf(sets) % 2 == 0){
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast = Toast.makeText(this, "Number of sets must be odd", duration);
+                    toast.show();
+                }
+                else{
+                    startIntent();
+                }
 
+            }
         }
+
+
 
     }
 
